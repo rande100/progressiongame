@@ -1,222 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>ProgressionRPG</title>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-			crossorigin="anonymous"
-		/>
-	</head>
-	<body>
-		<!-- begin super container -->
-		<div class="container">
-			<div class="row">
-				<h2>ProgressionRPG</h2>
-			</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>ProgressionRPG</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- begin super container -->
+    <div class="container">
+      <div class="row">
+        <h2>ProgressionRPG</h2>
+      </div>
 
-			<div class="row">
-				<div class="col-md">
-					<div>
-						<h3>You</h3>
-						<div>
-							<form id="change-player-name-form" style="margin-bottom: 0.5rem;">
-								<input
-									type="text"
-									name="player-name"
-									id="change-player-name"
-									value=""
-									placeholder="Name"
-								/><input
-									type="submit"
-									name="change-player-name-save"
-									value="Save"
-									id="change-player-name-save"
-								/>
-							</form>
-						</div>
-						<div class="card" style="width: 12rem; margin-right: 1rem; margin-bottom: 1rem;">
-							<div class="card-header" id="player-name">
-								Loading...
-							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item"><span id="player-level">0</span> Level</li>
-								<li class="list-group-item">
-									<span id="player-health">0</span> Health
-									<div class="progress">
-										<div
-											class="progress-bar bg-danger"
-											role="progressbar"
-											style="width: 0%;"
-											id="player-health-bar"
-										></div>
-									</div>
-								</li>
-								<li class="list-group-item"><span id="player-xp">0</span> XP</li>
-							</ul>
-						</div>
-					</div>
-					<div>
-						<h3>Mob</h3>
-						<div>
-							<form class="form-inline" id="mob-list-form" style="margin-bottom: 0.5rem;">
-								<select class="form-control" id="mob-list"></select>
-								<input type="submit" name="mob-list-submit" value="Spawn" class="btn btn-secondary" />
-								<input type="button" name="attack" value="Attack" id="attack" class="btn btn-danger" />
-							</form>
-						</div>
-						<div class="card" style="width: 12rem; margin-right: 1rem; margin-bottom: 1rem;">
-							<div class="card-header" id="mob-name">
-								Mob Name
-							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">
-									<span id="mob-health">0</span> Health
-									<div class="progress">
-										<div
-											class="progress-bar bg-danger"
-											role="progressbar"
-											style="width: 0%;"
-											id="mob-health-bar"
-										></div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+      <div class="row">
+        <div class="col-md">
+          <div>
+            <h3>You</h3>
+            <div>
+              <form id="change-player-name-form" style="margin-bottom: 0.5rem;">
+                <input
+                  type="text"
+                  name="player-name"
+                  id="change-player-name"
+                  value=""
+                  placeholder="Name"
+                /><input
+                  type="submit"
+                  name="change-player-name-save"
+                  value="Save"
+                  id="change-player-name-save"
+                />
+              </form>
+            </div>
+            <div
+              class="card"
+              style="width: 12rem; margin-right: 1rem; margin-bottom: 1rem;"
+            >
+              <div class="card-header" id="player-name">
+                Loading...
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span id="player-level">0</span> Level
+                </li>
+                <li class="list-group-item">
+                  <span id="player-health">0</span> Health
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 0%;"
+                      id="player-health-bar"
+                    ></div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <span id="player-xp">0 XP</span>
+                </li>
+                <li class="list-group-item">
+                  <span id="player-weapon">No Weapon</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3>Mob</h3>
+            <div>
+              <form
+                class="form-inline"
+                id="mob-list-form"
+                style="margin-bottom: 0.5rem;"
+              >
+                <select class="form-control" id="mob-list"></select>
+                <input
+                  type="submit"
+                  name="mob-list-submit"
+                  value="Spawn"
+                  class="btn btn-secondary"
+                />
+                <input
+                  type="button"
+                  name="attack"
+                  value="Attack"
+                  id="attack"
+                  class="btn btn-danger"
+                />
+              </form>
+            </div>
+            <div
+              class="card"
+              style="width: 12rem; margin-right: 1rem; margin-bottom: 1rem;"
+            >
+              <div class="card-header" id="mob-name">
+                Mob Name
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span id="mob-health">0</span> Health
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 0%;"
+                      id="mob-health-bar"
+                    ></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <h3>Log</h3>
+          <div
+            style="
+              height: 400px;
+              overflow-y: scroll;
+              border: 1px solid #dddddd;
+            "
+          >
+            <ul id="game-log">
+              <li>Welcome to ProgressionRPG.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>Party</h3>
+        <div id="player-list">
+          Loading...
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+      <div style="margin-top: 10px;">
+        <hr />
+        <iframe
+          width="400"
+          height="200"
+          src="https://www.youtube-nocookie.com/embed/IJiHDmyhE1A"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <!-- end super container-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      $(function () {
+        $("#mob-list-form").submit(function (e) {
+          e.preventDefault();
+          socket.emit("mob spawn", $("#mob-list").val());
+        });
+        $("#change-player-name-form").submit(function (e) {
+          e.preventDefault();
+          socket.emit("player name save", $("#change-player-name").val());
+        });
+        $("#attack").click(function (e) {
+          socket.emit("attack");
+        });
+      });
+      socket.on("mob update", function (mob) {
+        if (mob.name) {
+          $("#mob-name").text(`L${mob.level} ${mob.name}`);
+
+          if (mob.health > 0) {
+            $("#mob-health").text(mob.health);
+          } else {
+            $("#mob-health").text("DEAD");
+          }
+
+          let mobHealthPercent = Math.round((mob.health / mob.maxHealth) * 100);
+          $("#mob-health-bar").css({ width: mobHealthPercent + "%" });
+        } else {
+          $("#mob-name").text("No Enemy");
+          $("#mob-health").text("N/A");
+        }
+      });
+      socket.on("player list update", function (playerList) {
+        // update this player
+        $("#player-name").text(playerList[socket.id]["name"]);
+        $("#player-health").text(playerList[socket.id]["health"]);
+        $("#player-xp").text(
+          playerList[socket.id]["xp"] +
+            " / " +
+            playerList[socket.id]["level"] * 10 +
+            " XP"
+        );
+        $("#player-level").text(playerList[socket.id]["level"]);
+
+        if (playerList[socket.id]["weapon"]) {
+          $("#player-weapon").text(playerList[socket.id]["weapon"]["name"]);
+        } else {
+          $("#player-weapon").text("No Weapon");
+        }
+
+        let playerHealthPercent = Math.round(
+          (playerList[socket.id]["health"] /
+            playerList[socket.id]["maxHealth"]) *
+            100
+        );
+        $("#player-health-bar").css({ width: playerHealthPercent + "%" });
+
+        // update the entire player list
+        $("#player-list").empty();
+        for (let key in playerList) {
+          if (key == socket.id) continue;
+
+          let str = "";
+          str += `
+			<div class="card ${
+        key == socket.id ? "border-primary" : ""
+      }" style="width: 12rem; float: left; margin-right: 1rem; margin-bottom: 1rem;">
+				<div class="card-header">
+					${playerList[key]["name"]}
 				</div>
-				<div class="col-md">
-					<h3>Log</h3>
-					<div style="height: 400px; overflow-y: scroll; border: 1px solid #dddddd;">
-						<ul id="game-log">
-							<li>Welcome to ProgressionRPG.</li>
-						</ul>
-					</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">${playerList[key]["level"]} Level</li>
+					<li class="list-group-item">${playerList[key]["health"]} Health</li>
+					<li class="list-group-item">${playerList[key]["xp"]} XP</li>
+				</ul>
+				<div class="card-footer text-muted">
+					${key.substring(0, 8)}
 				</div>
 			</div>
-			<div>
-				<h3>Party</h3>
-				<div id="player-list">
-					Loading...
-				</div>
-				<div style="clear: both;"></div>
-			</div>
-			<div style="margin-top: 10px;">
-				<hr />
-				<iframe
-					width="400"
-					height="200"
-					src="https://www.youtube-nocookie.com/embed/IJiHDmyhE1A"
-					frameborder="0"
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen
-				></iframe>
-			</div>
-		</div>
-		<!-- end super container-->
-		<script
-			src="https://code.jquery.com/jquery-3.5.1.min.js"
-			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-			integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-			crossorigin="anonymous"
-		></script>
-		<script src="/socket.io/socket.io.js"></script>
-		<script>
-			var socket = io();
-		</script>
-		<script>
-			$(function () {
-				$("#mob-list-form").submit(function (e) {
-					e.preventDefault();
-					socket.emit("mob spawn", $("#mob-list").val());
-				});
-				$("#change-player-name-form").submit(function (e) {
-					e.preventDefault();
-					socket.emit("player name save", $("#change-player-name").val());
-				});
-				$("#attack").click(function (e) {
-					socket.emit("attack");
-				});
-			});
-			socket.on("mob update", function (mob) {
-				if (mob.name) {
-					$("#mob-name").text(`L${mob.level} ${mob.name}`);
-
-					if (mob.health > 0) {
-						$("#mob-health").text(mob.health);
-					} else {
-						$("#mob-health").text("DEAD");
-					}
-
-					let mobHealthPercent = Math.round((mob.health / mob.maxHealth) * 100);
-					$("#mob-health-bar").css({ width: mobHealthPercent + "%" });
-				} else {
-					$("#mob-name").text("No Enemy");
-					$("#mob-health").text("N/A");
-				}
-			});
-			socket.on("player list update", function (playerList) {
-				// update this player
-				$("#player-name").text(playerList[socket.id]["name"]);
-				$("#player-health").text(playerList[socket.id]["health"]);
-				$("#player-xp").text(playerList[socket.id]["xp"]);
-				$("#player-level").text(playerList[socket.id]["level"]);
-
-				let playerHealthPercent = Math.round(
-					(playerList[socket.id]["health"] / playerList[socket.id]["maxHealth"]) * 100
-				);
-				$("#player-health-bar").css({ width: playerHealthPercent + "%" });
-
-				// update the entire player list
-				$("#player-list").empty();
-				for (let key in playerList) {
-					if (key == socket.id) continue;
-
-					let str = "";
-					str += `
-						<div class="card ${
-							key == socket.id ? "border-primary" : ""
-						}" style="width: 12rem; float: left; margin-right: 1rem; margin-bottom: 1rem;">
-							<div class="card-header">
-								${playerList[key]["name"]}
-							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">${playerList[key]["level"]} Level</li>
-								<li class="list-group-item">${playerList[key]["health"]} Health</li>
-								<li class="list-group-item">${playerList[key]["xp"]} XP</li>
-							</ul>
-							<div class="card-footer text-muted">
-								${key.substring(0, 8)}
-							</div>
-						</div>
-					`;
-					$("#player-list").append(str);
-				}
-			});
-			socket.on("mob list update", function (mobList) {
-				// update the entire mob list
-				$("#mob-list").empty();
-				for (let key in mobList) {
-					let str = `<option value="${key}">L${mobList[key]["level"]} ${mobList[key]["name"]}</option>`;
-					$("#mob-list").append(str);
-				}
-			});
-			socket.on("gamelog", function (message) {
-				let str = `<li>${message}</li>`;
-				$("#game-log").prepend(str);
-			});
-		</script>
-	</body>
+		`;
+          $("#player-list").append(str);
+        }
+      });
+      socket.on("mob list update", function (mobList) {
+        // update the entire mob list
+        $("#mob-list").empty();
+        for (let key in mobList) {
+          let str = `<option value="${key}">L${mobList[key]["level"]} ${mobList[key]["name"]}</option>`;
+          $("#mob-list").append(str);
+        }
+      });
+      socket.on("gamelog", function (message) {
+        let str = `<li>${message}</li>`;
+        $("#game-log").prepend(str);
+      });
+    </script>
+  </body>
 </html>
